@@ -1,0 +1,24 @@
+@(signupForm: Form[User])
+
+@import helper._
+
+@import b3.vertical.fieldConstructor
+
+@main {
+    
+    <h1>Signup</h1>
+    
+    @b3.form(routes.HomeController.create()) {
+        
+        <fieldset>
+            @b3.text(signupForm("userName"), '_label -> "Name", '_help -> "")
+            @b3.text(signupForm("userEmail"), '_label -> "Email", '_help -> "")
+            @b3.text(signupForm("userPassword"), '_label -> "Password", '_help -> "")
+
+         </fieldset>
+        
+            <input type="submit" value="create" > 
+        
+    }
+    
+}
